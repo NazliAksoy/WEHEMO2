@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WEHEMO2" Class="WEHEMODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=WEHEMO2;Integrated Security=True" SettingsObjectName="WEHEMO.Business.Properties.Settings" SettingsPropertyName="WEHEMO2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DELETED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_TEST" Member="TESTs" ThisKey="ID" OtherKey="CUSTOMER_ID" Type="TEST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEST_RESULT" Member="TEST_RESULTs">
+    <Type Name="TEST_RESULT">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEST_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="STATUS_CODE_TEST_RESULT" Member="STATUS_CODE1" ThisKey="STATUS_CODE" OtherKey="CODE" Type="STATUS_CODE" IsForeignKey="true" />
+      <Association Name="TEST_TEST_RESULT" Member="TEST" ThisKey="TEST_ID" OtherKey="ID" Type="TEST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATUS_CODE" Member="STATUS_CODEs">
+    <Type Name="STATUS_CODE">
+      <Column Name="CODE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="STATUS_CODE_TEST_RESULT" Member="TEST_RESULTs" ThisKey="CODE" OtherKey="STATUS_CODE" Type="TEST_RESULT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEST" Member="TESTs">
+    <Type Name="TEST">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DELETED" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TEST_TEST_RESULT" Member="TEST_RESULTs" ThisKey="ID" OtherKey="TEST_ID" Type="TEST_RESULT" />
+      <Association Name="CUSTOMER_TEST" Member="CUSTOMER" ThisKey="CUSTOMER_ID" OtherKey="ID" Type="CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

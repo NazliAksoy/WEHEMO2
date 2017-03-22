@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WEHEMO">
+  <DataContextMoniker Name="/WEHEMODataContext" />
+  <nestedChildShapes>
+    <classShape Id="809b72b7-f148-486e-aee9-bb05ca746aa0" absoluteBounds="0.75, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WEHEMODataContext/CUSTOMER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="923ce84a-b7df-4d37-bd40-806b3bff84b9" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdbde195-fc68-434e-ad9d-5540f544e60f" absoluteBounds="6.25, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WEHEMODataContext/TEST_RESULT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47bf6442-eb92-4cfa-ad0b-3a5b81db52a2" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7bf0c3e9-d6ea-48c4-9823-1b905e12fc4b" absoluteBounds="3.5, 5.375, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/WEHEMODataContext/STATUS_CODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e0a7bd2-dfc5-4bc1-8467-a33692f4e65d" absoluteBounds="3.515, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddcb42da-7591-4e10-b3b4-bc879b21cf1a" absoluteBounds="3.5, 1.125, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/WEHEMODataContext/TEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="949fb7b9-23c3-49a2-a1f1-2b2356abec6e" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.97199625651042); (7.25 : 5.97199625651042); (7.25 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WEHEMODataContext/STATUS_CODE/STATUS_CODE_TEST_RESULT" />
+      <nodes>
+        <classShapeMoniker Id="7bf0c3e9-d6ea-48c4-9823-1b905e12fc4b" />
+        <classShapeMoniker Id="cdbde195-fc68-434e-ad9d-5540f544e60f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WEHEMODataContext/TEST/TEST_TEST_RESULT" />
+      <nodes>
+        <classShapeMoniker Id="ddcb42da-7591-4e10-b3b4-bc879b21cf1a" />
+        <classShapeMoniker Id="cdbde195-fc68-434e-ad9d-5540f544e60f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.01044840494792); (3.5 : 2.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WEHEMODataContext/CUSTOMER/CUSTOMER_TEST" />
+      <nodes>
+        <classShapeMoniker Id="809b72b7-f148-486e-aee9-bb05ca746aa0" />
+        <classShapeMoniker Id="ddcb42da-7591-4e10-b3b4-bc879b21cf1a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
