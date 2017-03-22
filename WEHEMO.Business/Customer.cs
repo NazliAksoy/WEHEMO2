@@ -8,6 +8,6 @@ namespace WEHEMO.Business
 {
     public class Customer 
     {
-
+        //Test commit
     }
 }
